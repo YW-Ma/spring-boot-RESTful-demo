@@ -17,9 +17,9 @@ public class ApplicationConfig {
   @Bean(name = "sessionFactory")
   public LocalSessionFactoryBean sessionFactory() {
     LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
-    sessionFactory.setDataSource(dataSource());
-    sessionFactory.setPackagesToScan("com.study.demo.entity");
-    sessionFactory.setHibernateProperties(hibernateProperties());
+    sessionFactory.setDataSource(dataSource()); // which DB you want to connect?
+    sessionFactory.setPackagesToScan("com.study.demo.entity"); // where to scan entities (POJO class)?
+    sessionFactory.setHibernateProperties(hibernateProperties()); // use what ORM properties?
     return sessionFactory;
   }
 
